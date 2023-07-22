@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SciWeaver
+    network: polygon-zkevm-testnet
+    source:
+      address: "0x0dF0a59947E598D08e71a59f287B40e51a108D4D"
+      abi: SciWeaver
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CreateDao
+        - OwnershipTransferred
+        - SetMasterBaseDao
+        - SetMasterDaoLogic
+      abis:
+        - name: SciWeaver
+          file: ./abis/SciWeaver.json
+      eventHandlers:
+        - event: CreateDao(indexed address,indexed address)
+          handler: handleCreateDao
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: SetMasterBaseDao(indexed address)
+          handler: handleSetMasterBaseDao
+        - event: SetMasterDaoLogic(indexed address)
+          handler: handleSetMasterDaoLogic
+      file: ./src/sci-weaver.ts

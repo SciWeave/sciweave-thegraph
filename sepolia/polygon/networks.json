@@ -1,0 +1,8 @@
+{
+  "polygon-zkevm-testnet": {
+    "SciWeaver": {
+      "address": "0x0dF0a59947E598D08e71a59f287B40e51a108D4D",
+      "startBlock": 0
+    }
+  }
+}
