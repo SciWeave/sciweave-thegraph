@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "SciWeaver": {
+      "address": "0x15bB155B6dD9d49419F55e8Ff9659ce70a34A36d",
+      "startBlock": 0
+    }
+  }
+}
